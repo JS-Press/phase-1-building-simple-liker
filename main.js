@@ -4,12 +4,32 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+document.addEventListener('DOMContentLoaded', () => {
 
+  
+
+const hearts = document.body.querySelectorAll('span.like-glyph')
+//console.log(hearts)
+
+hearts.forEach(heart => heart.addEventListener('click', likeCallback()))
+
+
+function likeCallback(hearts){
+  console.log(hearts.target)
+  mimicServerCall()
+  .then(() => {})
+  }
+
+
+
+})
 
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
 //------------------------------------------------------------------------------
+
+
 
 function mimicServerCall(url="http://mimicServer.example.com", config={}) {
   return new Promise(function(resolve, reject) {
@@ -23,3 +43,6 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
     }, 300);
   });
 }
+
+
+
